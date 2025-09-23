@@ -1,0 +1,12 @@
+<h1>Hallo server Nodejs</h1>
+<h1 class="text-3xl font-bold underline">Hello <%= nama %>!</h1>
+<h4>Daftar Mahasiswa</h4>
+<% if (mahasiswa.length < 1) { %>
+<h1>Mahasiswa Tidak ada</h1>
+<% } else { %>
+<ul class="list-disc ml-6">
+  <% mahasiswa.forEach(mhs => { %>
+  <li>nama: <%= mhs.nama %> | email: <%= mhs.email %></li>
+  <% }) %>
+</ul>
+<% } %>
