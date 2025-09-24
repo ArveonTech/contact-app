@@ -1,13 +1,29 @@
 import express from "express";
-import url from "url";
-import path from "path";
+import morgan from "morgan";
 const app = express();
 const port = 3000;
 import expressLayouts from "express-ejs-layouts";
 
 // gunakan ejs
 app.set("view engine", "ejs");
+
+// third-party middleware
 app.use(expressLayouts);
+app.use(morgan("dev"));
+
+// built-in middleware
+app.use(express.static("public"));
+
+// application level middleware
+app.use((req, res, next) => {
+  console.log(`Time : ${Date.now()}`);
+  next();
+});
+
+app.use((req, res, next) => {
+  console.log(`ini middleware ke-2`);
+  next();
+});
 
 app.get("/", (req, res) => {
   // res.send("Hello World!");
