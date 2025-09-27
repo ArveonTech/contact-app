@@ -1,8 +1,34 @@
-<h1 class="text-3xl font-bold underline mb-2">Contact Me!</h1>
-<form action="">
-  <label for="nama">Nama : </label>
-  <input type="text" name="nama" id="nama" class="border-2" required />
-  <label for="email">Email : </label>
-  <input type="text" name="email" id="emai" class="border-2" required />
-  <button type="submit" class="bg-blue-400 p-2">Kirim</button>
-</form>
+<div class="overflow-x-auto w-md mx-auto mt-20">
+  <table class="min-w-full text-sm">
+    <thead>
+      <tr>
+        <th class="px-4 py-2 border-b-2">#</th>
+        <th class="px-4 py-2 border-b-2">Nama</th>
+        <th class="px-4 py-2 border-b-2">No Hp</th>
+        <th class="px-4 py-2 border-b-2">Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (contacts.length === 0) { %>
+      <tr>
+        <td colspan="4">
+          <div class="bg-red-400 p-5 rounded mt-5">
+            <h1 class="font-semibold text-2xl">Daftar Contacts tidak ada</h1>
+          </div>
+        </td>
+      </tr>
+      <% } %> <% contacts.forEach((contact,i) => { %>
+      <tr class="text-center">
+        <td><%= i + 1 %></td>
+        <td class="px-4 py-2"><%= contact.nama %></td>
+        <td class="px-4 py-2"><%= contact.noHP %></td>
+        <td class="mt-2 flex justify-center">
+          <button class="bg-blue-500 px-2 rounded">
+            <a href="/contact/<%= contact.nama %>" class="text-white">Detail</a>
+          </button>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

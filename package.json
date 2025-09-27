@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Aplikasi ini saya buat untuk mengingat pembelajaran dari youtube web programing unpas,\r di playlist pembelajaran nodejs dasar",
   "main": "contacts.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
