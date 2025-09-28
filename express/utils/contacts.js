@@ -44,4 +44,20 @@ const cekDuplikat = async (nama) => {
   return contacts.find((contact) => contact.nama === nama);
 };
 
-export { contactsJSON, findContactsJSON, addContact, cekDuplikat };
+const deleteContact = async (nama) => {
+  const contacts = await contactsJSON();
+  const filteredContacts = contacts.filter((contact) => contact.nama !== nama);
+  saveContacts(filteredContacts);
+};
+
+const updateContacts = async (contactBaru) => {
+  const contacts = await contactsJSON();
+
+  // hilangkan contact lama yang sama dengan oldnama
+  const filteredContacts = contacts.filter((contact) => contact.nama !== contactBaru.oldNama);
+  delete contactBaru.oldNama;
+  filteredContacts.push(contactBaru);
+  saveContacts(filteredContacts);
+};
+
+export { contactsJSON, findContactsJSON, addContact, cekDuplikat, deleteContact, updateContacts };

@@ -11,6 +11,10 @@
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= contact.nama %></h5>
     <p class="font-normal text-gray-700 dark:text-gray-400"><%= contact.noHP %></p>
     <p class="font-normal text-gray-700 dark:text-gray-400"><%= contact.email %></p>
+    <div class="block mt-5">
+      <a href="/contact/edit/<%= contact.nama %>" class="bg-green-500 px-2 py-1 rounded">Ubah</a>
+      <a href="/contact/delete/<%= contact.nama %>" class="bg-red-500 px-2 py-1 rounded" onclick="return confirm(`yakin?`)">Hapus</a>
+    </div>
     <button class="mt-5 text-white bg-blue-500 px-2 py-1 rounded">
       <a href="/contact">&laquo; Kembali ke daftar contact</a>
     </button>
