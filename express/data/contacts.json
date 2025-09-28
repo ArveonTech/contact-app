@@ -1,12 +1,1 @@
-[
-  {
-    "nama": "ar",
-    "noHP": "0812345678",
-    "email": "ar@gmail.com"
-  },
-  {
-    "nama": "bin",
-    "noHP": "0802839492",
-    "email": "bin@gmail.com"
-  }
-]
+[{"nama":"1","noHP":"1","email":"1@gmail.com"},{"nama":"2","noHP":"2","email":"2@gmail.com"},{"nama":"3","noHP":"08228383383","email":"3@gmail.com"},{"nama":"4","noHP":"0828838383","email":"4@gmail.com"}]

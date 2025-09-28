@@ -1,4 +1,9 @@
 <div class="overflow-x-auto w-md mx-auto mt-20">
+  <% if (msg.length !== 0) { %>
+  <div class="bg-green-200 p-5 rounded mt-5">
+    <h1 class="font-semibold text-2xl"><%= msg %></h1>
+  </div>
+  <% } %>
   <table class="min-w-full text-sm">
     <thead>
       <tr>
@@ -23,7 +28,7 @@
         <td class="px-4 py-2"><%= contact.nama %></td>
         <td class="px-4 py-2"><%= contact.noHP %></td>
         <td class="mt-2 flex justify-center">
-          <button class="bg-blue-500 px-2 rounded">
+          <button class="bg-green-500 px-2 rounded">
             <a href="/contact/<%= contact.nama %>" class="text-white">Detail</a>
           </button>
         </td>
@@ -31,4 +36,9 @@
       <% }) %>
     </tbody>
   </table>
+  <div class="flex justify-center text-white">
+    <button class="bg-blue-500 mt-5 px-2 py-1 rounded">
+      <a href="/contact/add"> Tambah contact </a>
+    </button>
+  </div>
 </div>
