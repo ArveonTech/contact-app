@@ -1,4 +1,4 @@
-<form class="max-w-md mx-auto mt-10" method="post" action="/contact/update">
+<form class="max-w-md mx-auto mt-10" method="post" action="/contact?_method=PUT">
   <h1 class="text-center text-2xl font-semibold mb-5">Ubah Contact</h1>
   <% if (errors && errors.length > 0) { %>
   <div class="bg-red-400 p-5 rounded mt-5">
@@ -10,6 +10,7 @@
   </div>
   <% } %>
   <div class="relative z-0 w-full mb-5 group mt-3">
+    <input type="hidden" name="_id" value="<%= contact._id %>" />
     <input type="hidden" name="oldNama" value="<%= (contact.oldNama ? contact.oldNama : contact.nama) %>" />
     <input
       type="text"
